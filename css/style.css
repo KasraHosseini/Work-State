@@ -1,0 +1,284 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #433d8b, #2e236c, #17153b);
+}
+header {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff3;
+  border-radius: 0 0 8px 8px;
+  border-bottom: 2px #fff5 solid;
+}
+h1 {
+  color: white;
+  font-weight: 300;
+  font-size: 25px;
+}
+header > div:last-of-type {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+button {
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+}
+header > div > i:first-of-type {
+  font-size: 30px;
+  color: white;
+}
+header button {
+  color: #ccf;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #fff2;
+}
+header button.active {
+  background-color: white !important;
+}
+main {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+main h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+section.note-box,
+section.timer-box,
+section.task-box {
+  position: absolute;
+  width: 320px;
+  top: 10px;
+  right: 10px;
+  height: 0;
+  background-color: #fff3;
+  border-radius: 10px;
+  transition: height 300ms;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.note-box.active,
+section.timer-box.active,
+section.task-box.active {
+  height: 280px !important;
+}
+section.note-box > div {
+  width: 85%;
+}
+section.note-box > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.note-box > div > div button {
+  color: white;
+  font-size: 20px;
+}
+section.note-box textarea {
+  background-color: #fffc;
+  border: 1px #fff3 solid;
+  border-radius: 10px;
+  color: black;
+  padding: 5px 10px;
+  resize: vertical;
+}
+input:focus,
+textarea:focus {
+  outline: unset;
+}
+section.timer-box > div {
+  width: 85%;
+}
+section.timer-box > div > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.timer-box > div > div:first-of-type button {
+  color: white;
+  font-size: 20px;
+}
+section.timer-box > div > div:last-of-type {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.timer-box > div > div:last-of-type > input:read-only {
+  background-color: transparent;
+}
+section.timer-box > div > div:last-of-type > input {
+  font-size: 40px;
+  display: inline-block;
+  background-color: transparent;
+  border: unset;
+  color: white;
+  background-color: #fff5;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+section.timer-box > div > div:last-of-type button {
+  background-color: #fff2;
+  color: #ccf;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  font-size: 20px;
+}
+section.timer-box > div > div:last-of-type button.active {
+  background-color: #fff !important;
+}
+section.task-box > div {
+  width: 85%;
+}
+section.task-box > div > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.task-box > div > div:first-of-type button {
+  font-size: 20px;
+  color: white;
+}
+section.task-box > div > div:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+section.task-box > div > div:last-of-type > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+section.task-box > div > div:last-of-type > div:first-of-type input {
+  border: 1px #fff6 solid;
+  border-right: unset;
+  border-radius: 10px 0 0 10px;
+  background-color: #fff5;
+  color: white;
+  height: 28px;
+  padding: 0 5px;
+  flex-grow: 3;
+}
+section.task-box > div > div:last-of-type > div:first-of-type button {
+  border-radius: 0 10px 10px 0;
+  background-color: black;
+  color: white;
+  height: 28px;
+  flex-grow: 1;
+}
+section.task-box > div > div:last-of-type > div:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  padding-top: 5px;
+  height: 200px;
+  overflow-x: auto;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task.active input {
+  text-decoration: line-through;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task.active {
+  background-color: #afa2;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px #fff5 solid;
+  padding: 5px 8px;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task > button {
+  flex-grow: 1;
+  color: #ccf;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task button.active {
+  color: #fff;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task > input:read-only {
+  background-color: transparent;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task > input {
+  flex-grow: 4;
+  background-color: #fff5;
+  border-radius: 3px;
+  padding: 2px 4px;
+  color: white;
+  border: unset;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task > div {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+section.task-box > div > div:last-of-type > div:last-of-type .task > div button {
+  color: #ccf;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+/*
+//
+*/
+
+footer {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff3;
+  border-radius: 8px 8px 0 0;
+  border-top: 2px #fff5 solid;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+footer > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+footer > div:first-of-type i {
+  font-size: 30px;
+  color: white;
+}
+footer p {
+  font-size: 13px;
+  color: white;
+}
