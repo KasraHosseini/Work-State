@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work state</title>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div><i class="fa fa-duotone fa-box-alt"></i></div>
+      <div>
+        <button class="task-box-btn"><i class="fa fa-duotone fa-tasks"></i></button>
+        <button class="timer-box-btn"><i class="fa fa-duotone fa-timer"></i></button>
+        <button class="note-box-btn"><i class="fa fa-duotone fa-note"></i></button>
+      </div>
+    </header>
+    <main>
+      <section class="note-box">
+        <div>
+          <div>
+            <h3>note:</h3>
+            <button class="note-box-cls"><i class="fa fa-close"></i></button>
+          </div>
+          <textarea id="" cols="25" rows="10" dir="rtl"></textarea>
+        </div>
+      </section>
+      <section class="timer-box">
+        <div>
+          <div>
+            <h3>Timer</h3>
+            <button class="timer-box-cls"><i class="fa fa-close"></i></button>
+          </div>
+          <div>
+            <input class="timer-time" type="text" value="25:0" readonly />
+            <div>
+              <button class="play-pause-btn"><i class="fa fa-play"></i></button>
+              <button class="refresh-btn"><i class="fa fa-refresh"></i></button>
+              <button class="edit-btn"><i class="fa fa-duotone fa-pencil-alt"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="task-box">
+        <div>
+          <div>
+            <h3>tasks</h3>
+            <button class="task-box-cls"><i class="fa fa-close"></i></button>
+          </div>
+          <div>
+            <div>
+              <input type="text" class="task-input" />
+              <button class="add-task"><i class="fa fa-plus"></i></button>
+            </div>
+            <div class="task-bar">
+              
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <h1>Work State</h1>
+        <i class="fa fa-duotone fa-box-alt"></i>
+      </div>
+      <div>
+        <p>&copy; 2024-2025 All Rights Reserved</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
